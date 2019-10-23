@@ -8,6 +8,10 @@ class TestPub < MiniTest::Test
 
   def setup
 
+    @customer1 = Customer.new("Ryan", 30, 24)
+    @customer2 = Customer.new("Yousef", 5, 23)
+    @customer3 = Customer.new("Boss Baby", 10, 3)
+
     @drink1 = Drink.new("White Russian", 4, 3)
     @drink2 = Drink.new("Brewdog", 3, 2)
     @drink3 = Drink.new("Champagne", 10, 1)
@@ -57,4 +61,5 @@ class TestPub < MiniTest::Test
   def test_stock_value_all_drinks
     assert_equal(27, @pub.stock_value_all_drinks(@drink_stock))
   end
+
 end

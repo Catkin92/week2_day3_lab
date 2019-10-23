@@ -9,8 +9,12 @@ class Customer
     @drunk_level = 0
   end
 
+  def prove_customer_age
+    @age >= 18 ? true : false
+  end
+
   def buy_drink(drink, pub)
-    if @age >= 18
+    if prove_customer_age == true
       if @wallet >= drink.price
         if @drunk_level < 9
           pub.increase_money_in_till(drink.price)

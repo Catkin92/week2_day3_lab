@@ -41,4 +41,5 @@ class Pub
     return total
   end
 
+
 end

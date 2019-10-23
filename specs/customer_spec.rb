@@ -91,5 +91,9 @@ class TestCustomer < MiniTest::Test
     assert_equal("Not enough money!", result)
   end
 
+  def test_prove_customer_age
+    assert_equal(true, @customer1.prove_customer_age)
+    assert_equal(false, @customer3.prove_customer_age)
+  end
 
 end
