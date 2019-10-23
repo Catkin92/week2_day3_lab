@@ -16,6 +16,7 @@ class Customer
           pub.increase_money_in_till(drink.price)
           @wallet -= drink.price
           @drunk_level += drink.alcohol_level
+          pub.reduce_drink_stock(drink)
         end
         return "You're too drunk!"
       end
@@ -23,4 +24,14 @@ class Customer
     end
     return "Get out, kid!"
   end
+
+  def buy_food(food, pub)
+    if @wallet >= food.price
+      pub.increase_money_in_till(food.price)
+      @wallet -= food.price
+      @drunk_level -= food.rejuvenation_level
+    end
+    return "Not enough money!"
+  end
+
 end
